@@ -1,0 +1,36 @@
+<div
+    class="s-menu js-ontoggle-target"
+    data-ontoggle-target="js-site-menu"
+>
+    <div class="s-menu-container">
+        <div class="s-menu-wrapper">
+            <%# Search %>
+            <div class="s-menu-search">
+                <%- inline_svg('search') %>
+                <%- include(partial('_custom-search')) %>
+                <%- include(partial('_custom-search-input')) %>
+            </div>
+
+            <%# Sections %>
+            <div class="s-menu-sections">
+                <% menu_data.forEach(item => { %>
+                    <div class="s-menu-section">
+                        <h3 class="s-menu-section-title"><%= item.title %></h3>
+                        <ul class="s-menu-list">
+                        <% item['items'].forEach(subitem => { %>
+                            <li class="s-menu-list-item">
+                                <a
+                                    href="<%= typeof item.url_prefix !== 'undefined' ? item.url_prefix + subitem.url : subitem.url %>"
+                                    class="s-menu-list-link"
+                                >
+                                    <span><%= subitem.name %></span>
+                                </a>
+                            </li>
+                        <% }) %>
+                        </ul>
+                    </div>
+                <% }) %>
+            </div><%# sections %>
+        </div><%# wrapper %>
+    </div><%# container %>
+</div><%# menu %>

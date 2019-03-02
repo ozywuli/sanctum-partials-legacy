@@ -1,0 +1,58 @@
+<div class="s-navbar px-24">
+    <%# Title %>
+    <div class="s-navbar-block">
+        <a
+            class="s-navbar-title-link"
+            href="/"
+        >
+            <h1 class="nav-title">GEOSHEN</h1>
+        </a>
+    </div>
+
+    <div class="s-navbar-block mod-right">
+        <%# Links %>
+        <div class="s-navbar-links">
+            <% menu_navbar.forEach(item => { %>
+                <a
+                    href="<%= item.url %>"
+                    class="s-navbar-title-link mod-menu"
+                    target="<%= item.external ? '_blank' : '_self' %> "
+                >
+                    <%= item.name %>
+                </a>
+            <% }) %>
+        </div>
+
+        <%# Social %>
+        <div class="s-navbar-social">
+            <ul class="s-navbar-list">
+                <% social_navbar.forEach(element => { %>
+                    <li class="s-navbar-list-item">
+                        <a
+                            href="<%= element.url %>"
+                            class="s-navbar-list-link"
+                            target="_blank"
+                        >
+                            <%- inline_svg(`icon-${element.name}`) %>
+                        </a>
+                    </li>
+                <% }) %>
+            </ul>
+        </div>
+
+        <%# Search %>
+        <a
+            href="#"
+            class="s-navbar-search js-ontoggle-trigger"
+            data-ontoggle-target="js-site-menu"
+        >
+            <%- inline_svg('search') %>
+        </a>
+
+        <%# Avatar %>
+        <a href="#"><%- include(partial('_avatar')) %></a>
+
+        <%# Menu %>
+        <%- include(partial('_menu-toggle')) %>
+    </div>
+</div><%# / s-navbar %>

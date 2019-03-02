@@ -1,0 +1,19 @@
+<div class="footer-trunk">
+    <div class="footer-trunk-block">
+        <h3>Become a sponsor</h3>
+        <h4>Enjoy our content? Show your support by sponsoring us at&nbsp;<a href="<%= social_data_object.patreon.url %>" target="_blank">Patreon</a>.</h4>
+        <a href="<%= social_data_object.patreon.url %>" target="_blank" class="btn">Sponsor Us</a>
+    </div>
+    <div class="footer-trunk-block">
+        <h3>Geoshen Monthly</h3>
+        <h4>Sign up to get Geoshen's best content delivered monthly</h4>
+        <%- include(partial('_mailchimp')) %>
+    </div>
+
+    <div class="footer-trunk-block">
+        <h3>Stay Connected</h3>
+        <div class="prefooter__social">
+        <%- include(partial('_social-list')) %>
+        </div>
+    </div>
+</div>

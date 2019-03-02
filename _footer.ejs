@@ -1,0 +1,25 @@
+<div class="s-footer">
+    <%# trunk %>
+    <%- include(partial('_footer-trunk')) %>
+
+    <%# bar %>
+    <div class="s-footer-row">
+        <%# copyright %>
+        <div class="s-footer-copyright">
+            <span>Geoshen © <%= get_current_year() %> </span>
+        </div>
+        <%# links %>
+        <div class="s-footer-links">
+            <% menu_footer_data.forEach(element => { %>
+                <a href="<%= element.url %>" class="s-footer-link"><%= element.name %></a>
+            <% }) %>
+
+            <%# DO logo %>
+            <a href="https://m.do.co/c/ca514fa4bec7" class="s-footer-link" target="_blank">
+                <div class="digital-ocean-logo">
+                    <%- inline_svg('digital-ocean-logo') %>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

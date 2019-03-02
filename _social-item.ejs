@@ -1,0 +1,9 @@
+<li class="social-item <%= typeof mod !== 'undefined' ? `mod-${mod}` : '' %>">
+    <a
+        href="<%= url %> "
+        class="social-item-link {{#if mod}}mod-{{mod}}{{/if}}"
+        target="_blank"
+    >
+        <%- inline_svg(`icon-${id}`) %>
+    </a>
+</li>

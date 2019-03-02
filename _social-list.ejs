@@ -1,0 +1,10 @@
+<!-- SOCIAL MEDIA -->
+<ul class="social-list <%= typeof mod !== 'undefined' ? `mod-${mod}` : '' %>">
+    <% social_data.forEach(element => { %>
+        <%- include(partial('_social-item'), {
+            url: element.url,
+            id: element.id,
+            mod: typeof mod !== 'undefined' ? mod : undefined
+        }) %>
+    <% }) %>
+</ul>
