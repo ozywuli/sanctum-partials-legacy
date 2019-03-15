@@ -1,0 +1,19 @@
+<div class="list-inline {{#if mod}}mod-{{mod}}{{/if}}">
+    {{#if title}}
+        <h2 class="list-inline__title {{#if mod}}mod-{{mod}}{{/if}}">{{{title}}}</h2>
+    {{/if}}
+    <div class="list-inline-blocks">
+        <ul class="list {{#if mod}}mod-{{mod}}{{/if}}">
+            {{#each items as |item|}}
+                <li class="list-item {{#if ../mod}}mod-{{../mod}}{{/if}}">
+                    <div class="list-item__content {{#if ../mod}}mod-{{../mod}}{{/if}}">
+                        <a href="{{item.url}}" target="_blank">{{item.title}}</a>
+                        {{#if item.description}}
+                            <p>{{item.description}}</p>
+                        {{/if}}
+                    </div>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
